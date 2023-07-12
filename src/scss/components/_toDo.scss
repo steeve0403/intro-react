@@ -1,0 +1,112 @@
+#todo-list{
+    
+    z-index: 999;    
+    margin: 10rem auto;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(145, 197, 227);
+    border-radius: 5px;
+    box-shadow: 0 0 1em rgb(255, 254, 254);
+
+    h2{
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem;
+    }
+
+    form{
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    form, .todo {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 4px 8px;
+        flex-grow: 1;
+        margin-right: 16px;
+      }
+
+    .todo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+      
+    button {
+        width: 15%;
+        font-size: 16px;
+        background-color: rgb(217, 60, 35);
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        margin: 0 0.5rem;
+        padding: 8px 16px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgb(173, 47, 28);
+        }
+        &:active{
+            background-color: rgb(130,35,21);
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+
+    input[type='text'] { 
+        font-size: 1.5rem; 
+         
+    }
+
+    .todo input[type="checkbox"] {
+        transform: scale(1.8) translateY(1px);
+        margin: 0 16px 0 0;
+        cursor: pointer;
+    }
+
+    .todo-text {
+        width: 100%;
+        font-size: 24px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+
+        input {
+            
+            padding: 4px;  
+        }
+    }
+
+    .todo-completed {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .todo-actions {
+        
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            width: 100%;
+            padding: 8px 16px;
+        }
+    }
+}
+
+
