@@ -1,12 +1,16 @@
 #todo-list{
-    position: relative;
-    z-index: 1;    
+        
     margin: 10rem auto;
     width: 50%;
     text-align: center;
     background-color: rgb(145, 197, 227);
     border-radius: 5px;
     box-shadow: 0 0 1em rgb(255, 254, 254);
+    z-index: 100;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
 
     h2{
         color: white;
@@ -20,7 +24,18 @@
         margin-bottom: 30px;
         display: flex;
         justify-content: space-between;
-        
+
+        input {
+        width: 100%;
+        padding: 4px 8px;
+        flex-grow: 1;
+        margin-right: 16px;
+        }
+
+        input[type='text'] { 
+        font-size: 1.5rem; 
+         
+        }
     }
 
     form, .todo {
@@ -28,36 +43,18 @@
         margin-bottom: 10px;
     }
 
-    form {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-
-    form input {
-        width: 100%;
-        padding: 4px 8px;
-        flex-grow: 1;
-        margin-right: 16px;
-      }
-
     .todo {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
-    }
-      
-    input[type='text'] { 
-        font-size: 1.5rem; 
-         
-    }
 
-    .todo input[type="checkbox"] {
+        input[type="checkbox"] {
         background-color: transparent;
         transform: scale(1.8) translateY(1px);
         margin: 0 16px 0 0;
         cursor: pointer;
+        }
+        
     }
 
     .todo-text {
@@ -80,11 +77,30 @@
     }
 
     .todo-actions {
-        
         display: flex;
         justify-content: space-between;
-
     }
 }
 
+@media screen and (max-width: 720px){
 
+    #todo-list{
+        padding: 1rem;
+
+        h2{
+            font-size: 3rem;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+          
+            input{
+                padding:  0 ;
+                margin-bottom: 1rem;
+            }
+         
+        }
+    }
+    
+}

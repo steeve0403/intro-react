@@ -5,8 +5,18 @@
 }
 
 body{
+    //position: relative;
+    z-index: -300;
     width: 100vw;
     height: 100vh;
+    transition: background-image 0.3s ease;
+    background-image: url("/img/sun.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    //transform: translateY(-50%);
+    //position: absolute;
+    opacity: 0.8;
     
 }
 

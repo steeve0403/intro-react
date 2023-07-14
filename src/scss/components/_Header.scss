@@ -1,0 +1,43 @@
+header{
+    z-index: -999;
+    width: 100%;
+
+    h1{
+        z-index: 100;
+        font-size: 5rem;
+        color: black;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100px;
+    }
+    cite{
+
+    }
+
+    figure{
+        position: relative;
+        z-index: -100;
+        height: 100vh;
+        background-image: url(/img/imgCloud/cloud1-2.png);
+        background-size: cover;
+        animation: clouds_animation 75s linear infinite;
+    }
+
+    @keyframes clouds_animation {
+        0%  {background-position: 0 0;}
+        100%  {background-position: -2122px 0;}
+    }
+}
+@media screen and (max-width: 720px){
+
+    header{
+        
+        h1{
+            font-size: 3rem;
+            top: 200px;
+        }
+    }
+    
+}

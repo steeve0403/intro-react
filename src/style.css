@@ -6,11 +6,6 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
   z-index: -300;
   width: 100vw;
   height: 100vh;
@@ -20,52 +15,6 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0.8;
-}
-body figure {
-  position: relative;
-  z-index: -100;
-  height: 100vh;
-  background-image: url(imgCloud/cloud1-2.png);
-  background-size: cover;
-  animation: clouds_animation 75s linear infinite;
-}
-body figure h1 {
-  font-size: 6rem;
-  color: rgb(139, 139, 35);
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 200px;
-}
-body figure cite {
-  color: rgb(73, 73, 14);
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 350px;
-}
-@keyframes clouds_animation {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -2122px 0;
-  }
-}
-body .mist {
-  width: 100vw;
-  height: 100%;
-  position: relative;
-  z-index: -200;
-  transform: translateY(-50%);
-  background-image: linear-gradient(180deg, transparent, #081420);
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -6rem;
 }
 
 /*.anim {
@@ -188,14 +137,17 @@ body .mist {
   }
 }  */
 #todo-list {
-  position: relative;
-  z-index: 1;
   margin: 10rem auto;
   width: 50%;
   text-align: center;
   background-color: rgb(145, 197, 227);
   border-radius: 5px;
   box-shadow: 0 0 1em rgb(255, 254, 254);
+  z-index: 100;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
 }
 #todo-list h2 {
   color: white;
@@ -209,28 +161,23 @@ body .mist {
   display: flex;
   justify-content: space-between;
 }
-#todo-list form, #todo-list .todo {
-  padding: 10px 20px;
-  margin-bottom: 10px;
-}
-#todo-list form {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
 #todo-list form input {
   width: 100%;
   padding: 4px 8px;
   flex-grow: 1;
   margin-right: 16px;
 }
+#todo-list form input[type=text] {
+  font-size: 1.5rem;
+}
+#todo-list form, #todo-list .todo {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
 #todo-list .todo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-#todo-list input[type=text] {
-  font-size: 1.5rem;
 }
 #todo-list .todo input[type=checkbox] {
   background-color: transparent;
@@ -258,6 +205,22 @@ body .mist {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 720px) {
+  #todo-list {
+    padding: 1rem;
+  }
+  #todo-list h2 {
+    font-size: 3rem;
+  }
+  #todo-list form {
+    display: flex;
+    flex-direction: column;
+  }
+  #todo-list form input {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+}
 .dark {
   background-image: url(/img/backgroundNight.jpg);
 }
@@ -400,28 +363,172 @@ body .mist {
 }
 
 .containerBtnDL {
-  width: 10%;
+  width: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  background-color: rgba(255, 255, 255, 0.27);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  position: relative;
-  top: 7rem;
+  gap: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.555);
+  padding: 0.5rem 0.5rem;
+  border-radius: 100px;
+  position: absolute;
   left: 0rem;
-  right: 0rem;
   transition: all 0.3s ease;
 }
 .containerBtnDL .btnDark {
+  padding: 5px;
+  margin: 0;
+  min-width: 35px;
+  min-height: 15px;
   color: black;
   background: linear-gradient(90deg, rgb(73, 56, 222) 0%, rgb(86, 79, 209) 100%);
 }
 .containerBtnDL .btnLight {
-  display: none;
+  padding: 5px;
+  margin: 0;
+  min-width: 35px;
+  min-height: 15px;
   color: white;
   background: linear-gradient(90deg, rgb(56, 194, 222) 0%, rgb(79, 129, 209) 100%);
+}
+
+/*label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+span {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2c3e50;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+span:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: 3px;
+  bottom: 2.6px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + span {
+  background-color: #00c853;
+}
+
+input:checked + span:before {
+  transform: translateX(29px);
+}
+
+strong {
+  position: absolute;
+  left: 100%;
+  width: max-content;
+  line-height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}*/
+nav {
+  height: 50px;
+  background: linear-gradient(90deg, rgb(199, 222, 56) 0%, rgb(209, 192, 79) 100%);
+  display: flex;
+  justify-content: center;
+}
+nav .list {
+  height: 100%;
+  list-style-type: none;
+  background: linear-gradient(90deg, rgb(199, 222, 56) 0%, rgb(209, 192, 79) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+nav .list .items {
+  margin-right: 10px;
+  color: #f1f1f1;
+}
+nav .btnNav {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  nav .list {
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+  }
+  nav .list .items:nth-child(1) {
+    border-top: 1px solid #ffffff;
+    margin-top: 50px;
+  }
+  nav .list .items {
+    height: 50px;
+    width: 200px;
+    border-bottom: 1px solid #ffffff;
+    line-height: 50px;
+  }
+  nav .btnNav {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #f1f1f1;
+    cursor: pointer;
+  }
+}
+header {
+  z-index: -999;
+  width: 100%;
+}
+header h1 {
+  z-index: 100;
+  font-size: 5rem;
+  color: black;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+}
+header figure {
+  position: relative;
+  z-index: -100;
+  height: 100vh;
+  background-image: url(/img/imgCloud/cloud1-2.png);
+  background-size: cover;
+  animation: clouds_animation 75s linear infinite;
+}
+@keyframes clouds_animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2122px 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  header h1 {
+    font-size: 3rem;
+    top: 200px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
