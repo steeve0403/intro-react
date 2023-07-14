@@ -1,6 +1,6 @@
 #todo-list{
-    
-    z-index: 999;    
+    position: relative;
+    z-index: 1;    
     margin: 10rem auto;
     width: 50%;
     text-align: center;
@@ -9,16 +9,18 @@
     box-shadow: 0 0 1em rgb(255, 254, 254);
 
     h2{
-        font-size: 2rem;
+        color: white;
+        font-size: 5rem;
         text-align: center;
         margin: 1rem;
     }
 
     form{
-        padding: 10px 20px;
-        margin-bottom: 10px;
+        padding: 30px 20px;
+        margin-bottom: 30px;
         display: flex;
         justify-content: space-between;
+        
     }
 
     form, .todo {
@@ -46,34 +48,13 @@
         
     }
       
-    button {
-        width: 15%;
-        font-size: 16px;
-        background-color: rgb(217, 60, 35);
-        color: #fff;
-        border-radius: 8px;
-        border: none;
-        margin: 0 0.5rem;
-        padding: 8px 16px;
-        cursor: pointer;
-
-        &:hover{
-            background-color: rgb(173, 47, 28);
-        }
-        &:active{
-            background-color: rgb(130,35,21);
-        }
-        &:focus{
-            outline: 0;
-        }
-    }
-
     input[type='text'] { 
         font-size: 1.5rem; 
          
     }
 
     .todo input[type="checkbox"] {
+        background-color: transparent;
         transform: scale(1.8) translateY(1px);
         margin: 0 16px 0 0;
         cursor: pointer;
@@ -93,6 +74,7 @@
     }
 
     .todo-completed {
+        color: black;
         display: flex;
         margin: 10px 0;
     }
@@ -102,10 +84,6 @@
         display: flex;
         justify-content: space-between;
 
-        button{
-            width: 100%;
-            padding: 8px 16px;
-        }
     }
 }
 

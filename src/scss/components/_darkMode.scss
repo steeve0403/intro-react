@@ -1,0 +1,64 @@
+
+.dark {
+    background-image: url(/img/backgroundNight.jpg);
+
+    h1 {
+    color: rgb(154, 53, 53);
+    }
+
+    #todo-list{
+    background-color: rgba(14, 14, 89, 0.705);
+    box-shadow: 0 0 1em rgb(0, 0, 0);
+
+        h2{
+            color: black;
+        }
+        
+        .containerBtn {
+            
+            .btn {
+            min-width: 100px;
+            min-height: 60px;
+            color: black;
+            background: #09148d;
+            background: linear-gradient(90deg, rgb(36, 68, 155) 0%, rgb(16, 29, 83) 100%);
+            box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.866);
+
+                &::before {
+                    border: 6px solid #5900ff;
+                    box-shadow: 0 0 60px rgba(128, 57, 249, 0.64);
+                
+                }
+
+                &:hover, &:focus {
+                color: #2108de;
+
+                }
+
+                &::after {
+                border: 6px solid #6a00ff;
+            
+                }
+            }
+        }
+
+        .btn {
+            min-width: 50px;
+            min-height: 50px;
+            //background: #e4ed3b;
+            background: linear-gradient(90deg, rgb(36, 68, 155) 0%, rgb(16, 29, 83) 100%);
+            border: none;
+            color: black;
+            border-radius: 100px;
+            border: none;
+            margin: 0 0.5rem;
+            padding: 10px ;
+            cursor: pointer;
+        
+            &:hover{
+              background: linear-gradient(90deg, rgb(52, 97, 219) 0%, #082460 100%);
+            }
+        }
+    }
+}
+

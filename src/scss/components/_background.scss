@@ -1,21 +1,25 @@
 
-.header{
-    //z-index: -999;
+body{
+    //position: relative;
+    z-index: -300;
     width: 100vw;
-    height: 50vh;
-    background-image: url(/backgroundNight.jpg);
+    height: 100vh;
+    transition: background-image 0.3s ease;
+    background-image: url("/img/sun.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     //transform: translateY(-50%);
     //position: absolute;
     opacity: 0.8;
-
+    
     
     
     figure{
-     
-        height: 50vh;
-        background-image: url(/imgCloud/cloud1-2.png);
+        position: relative;
+        z-index: -100;
+        height: 100vh;
+        background-image: url(imgCloud/cloud1-2.png);
         background-size: cover;
         animation: clouds_animation 75s linear infinite;
 
@@ -45,15 +49,18 @@
     }
 
     .mist{
+      width: 100vw;
+      height: 100%;
+      position: relative;
+      z-index: -200;
       transform: translateY(-50%); //0D151C
       background-image:linear-gradient(180deg,transparent,#081420);
-      width: 100%;
-      height: 30%;
+      
       content: "";
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 16rem;
+      top: -6rem;
       
     }
 

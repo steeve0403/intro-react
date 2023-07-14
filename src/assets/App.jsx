@@ -1,28 +1,37 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
-import React from 'react';
+import React from 'react'
 
 
 
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const storedTodos = JSON.parse(localStorage.getItem('todos'));
+
+  const [todos, setTodos] = useState(storedTodos);
   const [todo, setTodo] = useState("");
   const [todoEditing, setTodoEditing] = useState(null);
   const [editingText, setEditingText] = useState("");
+  console.log(localStorage);
 
-  useEffect(() => {
-    const temp = localStorage.getItem("todos");
-    const loadedTodos = JSON.parse(temp);
-    if (loadedTodos) {
-      setTodos(loadedTodos);
-    }
-  }, []);
+  useEffect(()=>{
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
-  useEffect(() => {
-    const temp = JSON.stringify(todos);
-    localStorage.setItem("todos", temp);
+  /*useEffect(() => {
+    const json = JSON.stringify(todos);
+    localStorage.setItem("todos", json);
   }, [todos]);
+
+  useEffect(() => {
+    const json = localStorage.getItem("todos");
+    const loadedTodos = JSON.parse(json);
+    if (loadedTodos){
+      setTodos(loadedTodos);
+    } 
+  }, []);*/
+
+  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -63,25 +72,17 @@ const App = () => {
   }
 
   return (
-    <div className='toDoBody'>
-    <div className="header">
-        <figure>
-        <h1>"Success is the residue of planning."</h1>
-        <cite>Benjamin Franklin</cite>
-        </figure>
-        <div className="mist">
-        </div>
-    </div>
-   
     <div id="todo-list">
-      <h1>To Do List</h1>
+      <h2>To Do List</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
-        <button type="submit"><i class="fa-solid fa-check"></i></button>
+        <div className="containerBtn">
+        <button className="btn btnCheck" type="submit"><i className="fa-solid fa-check" ></i></button>
+        </div>
       </form>
       {todos.map((todo) => (
         <div key={todo.id} className="todo">
@@ -103,17 +104,17 @@ const App = () => {
           </div>
           <div className="todo-actions">
             {todo.id === todoEditing ? (
-              <button onClick={() => submitEdits(todo.id)}><i class="fa-solid fa-check-to-slot"></i></button>
+              <button className='btn btnEdits' onClick={() => submitEdits(todo.id)}><i className="fa-solid fa-check-to-slot"></i></button>
             ) : (
-              <button onClick={() => setTodoEditing(todo.id)}><i class="fa-solid fa-pen-to-square"></i></button>
+              <button className='btn btnUpdate' onClick={() => setTodoEditing(todo.id)}><i className="fa-solid fa-pen-to-square"></i></button>
             )}
 
-            <button onClick={() => deleteTodo(todo.id)}><i class="fa-solid fa-trash"></i></button>
+            <button className='btn btnDelete' onClick={() => deleteTodo(todo.id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         </div>
       ))}
     </div>
-    </div>
+  
   );
 };
 
